@@ -3,10 +3,11 @@ import styled from 'styled-components';
 import ChatIcon from '@material-ui/icons/Chat';
 import MoreVertIcon from '@material-ui/icons/MoreVert';
 import DonutLargeIcon from '@material-ui/icons/DonutLarge';
+import { IconButton } from '@material-ui/core';
 
 function SidebarHeaderRight() {
   return (
-    <SidebarHeaderRight>
+    <SidebarHeaderRightWrap>
       <IconButton>
         <DonutLargeIcon />
       </IconButton>
@@ -16,13 +17,13 @@ function SidebarHeaderRight() {
       <IconButton>
         <MoreVertIcon />
       </IconButton>
-    </SidebarHeaderRight>
+    </SidebarHeaderRightWrap>
   );
 }
 
 export default SidebarHeaderRight;
 
-const SidebarHeaderRight = styled.div`
+const SidebarHeaderRightWrap = styled.div`
   display: flex;
   align-items: center;
   justify-content: space-between;

@@ -2,23 +2,19 @@ import React from 'react';
 import styled from 'styled-components';
 import { Avatar } from '@material-ui/core';
 import SidebarHeaderRight from './SidebarHeaderRight';
-import SidebarSearch from './SidebarSearch';
-import SidebarChats from './SidebarChats';
 
 function SidebarHeader() {
   return (
-    <SidebarHeader>
+    <SidebarHeaderWrap>
       <Avatar />
       <SidebarHeaderRight />
-      <SidebarSearch />
-      <SidebarChats />
-    </SidebarHeader>
+    </SidebarHeaderWrap>
   );
 }
 
 export default SidebarHeader;
 
-const SidebarHeader = styled.div`
+const SidebarHeaderWrap = styled.div`
   display: flex;
   justify-content: space-between;
   padding: 20px;

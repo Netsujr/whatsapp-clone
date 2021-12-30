@@ -2,17 +2,24 @@ import React from 'react';
 import styled from 'styled-components';
 import { SearchOutlined } from '@material-ui/icons';
 
-function SidebarSearch(props) {
+function SidebarSearch() {
   return (
-    <SidebarSearch>
-      <SearchOutlined />
-    </SidebarSearch>
+    <SidebarSearchWrap>
+      <SidebarSearchContainer>
+        <SearchOutlined />
+        <input placeholder="Search or start new chat" type="text" />
+      </SidebarSearchContainer>
+    </SidebarSearchWrap>
   );
 }
 
 export default SidebarSearch;
 
 
-const SidebarSearch = styled.div`
+const SidebarSearchWrap = styled.div`
 
-`;
+  `;
+
+const SidebarSearchContainer= styled.div`
+
+  `;

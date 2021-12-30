@@ -3,14 +3,14 @@ import styled from 'styled-components';
 
 function SidebarChats() {
   return (
-    <SidebarChats>
-      <input placeholder="Search or start new chat" type="text" />
-    </SidebarChats>
+    <SidebarChatsWrap>
+     
+    </SidebarChatsWrap>
   );
 }
 
 export default SidebarChats;
 
-const SidebarChats = styled.div`
+const SidebarChatsWrap = styled.div`
 
 `;
