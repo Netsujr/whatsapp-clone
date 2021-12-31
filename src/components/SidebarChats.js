@@ -3,14 +3,14 @@ import styled from 'styled-components';
 
 function SidebarChats() {
   return (
-    <SidebarChatsWrap>
-     
-    </SidebarChatsWrap>
+    <SidebarChatsContainer>
+
+    </SidebarChatsContainer>
   );
 }
 
 export default SidebarChats;
 
-const SidebarChatsWrap = styled.div`
+const SidebarChatsContainer = styled.div`
 
 `;

@@ -7,7 +7,7 @@ import { IconButton } from '@material-ui/core';
 
 function SidebarHeaderRight() {
   return (
-    <SidebarHeaderRightWrap>
+    <SidebarHeaderRightContainer>
       <IconButton>
         <DonutLargeIcon />
       </IconButton>
@@ -17,13 +17,13 @@ function SidebarHeaderRight() {
       <IconButton>
         <MoreVertIcon />
       </IconButton>
-    </SidebarHeaderRightWrap>
+    </SidebarHeaderRightContainer>
   );
 }
 
 export default SidebarHeaderRight;
 
-const SidebarHeaderRightWrap = styled.div`
+const SidebarHeaderRightContainer = styled.div`
   display: flex;
   align-items: center;
   justify-content: space-between;

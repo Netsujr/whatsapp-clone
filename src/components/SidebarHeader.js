@@ -5,16 +5,16 @@ import SidebarHeaderRight from './SidebarHeaderRight';
 
 function SidebarHeader() {
   return (
-    <SidebarHeaderWrap>
+    <SidebarHeaderContainer>
       <Avatar />
       <SidebarHeaderRight />
-    </SidebarHeaderWrap>
+    </SidebarHeaderContainer>
   );
 }
 
 export default SidebarHeader;
 
-const SidebarHeaderWrap = styled.div`
+const SidebarHeaderContainer = styled.div`
   display: flex;
   justify-content: space-between;
   padding: 20px;
