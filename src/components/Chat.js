@@ -48,24 +48,44 @@ export default Chat;
 
 const Container = styled.div`
   flex: 0.65;
+  display: flex;
+  flex-direction: column;
+
   /* background-color:blue; */
 
   `;
 
 const ChatHeader = styled.div`
-
+  padding: 20px;
+  display: flex;
+  align-items: center;
+  border-bottom: 1px solid lightgray;
   `;
 
 const ChatHeaderInfo = styled.div`
+  flex: 1;
+  padding-left: 20px;
 
+  h3 {
+    margin-bottom: 3px;
+    font-weight: 600;
+  }
+
+  p {
+    color: gray;
+  }
   `;
 
 const ChatHeaderRight = styled.div`
-
+  display: flex;
+  justify-content: space-between;
+  min-width: 100px;
   `;
 
 const ChatBody = styled.div`
-
+  flex: 1;
+  background-image: url('../images/whats-app-background.jpeg');
+  z-index: 1;
   `;
 
 const ChatFooter = styled.div`
