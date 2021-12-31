@@ -1,10 +1,12 @@
 import React from 'react';
 import styled from 'styled-components';
+import SidebarChat from './SidebarChat';
 
 function SidebarChats() {
   return (
     <SidebarChatsContainer>
-
+      <SidebarChat />
+      <SidebarChat />
     </SidebarChatsContainer>
   );
 }
@@ -12,5 +14,8 @@ function SidebarChats() {
 export default SidebarChats;
 
 const SidebarChatsContainer = styled.div`
+  flex: 1;
+  background-color: white;
+  overflow: scroll;
 
-`;
+  `;
