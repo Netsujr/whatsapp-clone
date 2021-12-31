@@ -3,6 +3,7 @@ import React from 'react';
 import Sidebar from './Sidebar';
 import styled from 'styled-components';
 import './App.css';
+import Chat from './components/Chat';
 
 
 function App() {
@@ -11,7 +12,7 @@ function App() {
       <h1>Renato's WhatsApp Chat</h1>
       <AppBody>
         <Sidebar />
-
+        <Chat />
         {/* chat area */}
       </AppBody>
     </div>
@@ -26,4 +27,4 @@ const AppBody = styled.div`
   height: 90vh;
   background-color: #ededed;
   box-shadow: -1px 4px 20px -6px rgba(0, 0, 0, 0.7);
-`;
+  `;
