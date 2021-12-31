@@ -29,8 +29,8 @@ const SidebarHeaderRightContainer = styled.div`
   justify-content: space-between;
   min-width: 10vw;
 
-  .MuiSvgIcon-root {
+  /* .MuiSvgIcon-root {
     margin-right: 2vw;
     font-size: 24px !important;
-  }
+  } */
   `;

@@ -5,7 +5,7 @@ import SidebarChat from './SidebarChat';
 function SidebarChats() {
   return (
     <SidebarChatsContainer>
-      <SidebarChat />
+      <SidebarChat addNewChat />
       <SidebarChat />
     </SidebarChatsContainer>
   );
