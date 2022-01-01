@@ -84,8 +84,8 @@ const ChatHeaderRight = styled.div`
 
 const ChatBody = styled.div`
   flex: 1;
-  background-image: url('../images/whats-app-background.jpeg');
-  z-index: 1;
+  /* background-image: url('../images/whats-app-background.jpeg'); */
+  /* background-image: url('https://'); */
   `;
 
 const ChatFooter = styled.div`
