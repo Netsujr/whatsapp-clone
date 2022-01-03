@@ -1,6 +1,7 @@
 import { Avatar, IconButton } from '@material-ui/core';
 import React, { useEffect, useState } from 'react';
 import styled from 'styled-components';
+import '../styles/ChatMessage.css';
 import SearchOutlinedIcon from '@material-ui/icons/SearchOutlined';
 import MoreVertIcon from '@material-ui/icons/MoreVert';
 import AttachFileIcon from '@material-ui/icons/AttachFile';
@@ -36,7 +37,17 @@ function Chat() {
         </ChatHeaderRight>
       </ChatHeader>
       <ChatBody>
-        <h1>Hello</h1>
+        <div className={`chat_message ${true && 'chat_receiver'}`}>
+
+          <ChatName>
+            Renato Delboni
+          </ChatName>
+          Hello Guys
+          <ChatTimeStamp>
+            12:00am
+          </ChatTimeStamp>
+
+        </div >
       </ChatBody>
       <ChatFooter>
 
@@ -86,6 +97,7 @@ const ChatHeaderRight = styled.div`
 const ChatBody = styled.div`
   flex: 1;
   background-image: url(${background});
+  /* opacity: 0.5; */
   background-repeat: repeat;
   background-position: center;
   padding: 30px;
@@ -97,4 +109,16 @@ const ChatBody = styled.div`
 
 const ChatFooter = styled.div`
 
+  `;
+
+const ChatTimeStamp = styled.span`
+  margin-left: 10px;
+  font-size: xx-small;
+  `;
+
+const ChatName = styled.span`
+  position: absolute;
+  top: -15px;
+  font-weight: 800;
+  font-size: xx-small;
   `;
