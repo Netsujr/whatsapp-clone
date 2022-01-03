@@ -1,11 +1,8 @@
-// import '../Style/Sidebar.css';
 import React from 'react';
 import styled from 'styled-components';
 import SidebarHeader from './components/SidebarHeader';
 import SidebarSearch from './components/SidebarSearch';
 import SidebarChats from './components/SidebarChats';
-
-
 
 
 function Sidebar() {
