@@ -19,8 +19,8 @@ function SidebarChat({ addNewChat, id, name }) {
 
     if (roomName) {
       //database firebase stuff
-      db.colletion("Rooms").add({
-        name: roomName,
+      db.collection("rooms").add({
+        name: roomName
       });
     }
   };
@@ -34,11 +34,9 @@ function SidebarChat({ addNewChat, id, name }) {
       </SidebarChatInfo>
     </ChatContainer>
   ) : (
-    <NewChatContainer onClick={createChat}>
-      <ChatContainer>
+      <ChatContainer onClick={createChat}>
         <h2>Add new Chat</h2>
       </ChatContainer>
-    </NewChatContainer>
   );
 }
 
@@ -62,9 +60,5 @@ const ChatContainer = styled.div`
 
 const SidebarChatInfo = styled.div`
     margin-left: 15px;
-
-    `;
-
-const NewChatContainer = styled.div`
 
     `;

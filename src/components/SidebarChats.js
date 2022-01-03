@@ -8,11 +8,11 @@ function SidebarChats() {
   const [rooms, setRooms] = useState([]);
 
   useEffect(() => {
-    db.collection("Rooms").onSnapshot((snapshot) =>
+    db.collection("rooms").onSnapshot((snapshot) =>
       setRooms(snapshot.docs.map((doc) => ({
-          id: doc.id,
-          data: doc.data(),
-        }))
+      id: doc.id,
+      data: doc.data(),
+    }))
     ));
   }, []);
 
