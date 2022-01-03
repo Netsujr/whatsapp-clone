@@ -5,17 +5,27 @@ import '../styles/ChatMessage.css';
 import SearchOutlinedIcon from '@material-ui/icons/SearchOutlined';
 import MoreVertIcon from '@material-ui/icons/MoreVert';
 import AttachFileIcon from '@material-ui/icons/AttachFile';
+import InsertEmoticonIcon from '@material-ui/icons/InsertEmoticon';
+import MicIcon from '@material-ui/icons/Mic';
 import background from "../images/whats-app-background.jpeg";
 
 function Chat() {
 
+  const [input, setInput] = useState("");
   const [seed, setSeed] = useState("");
+
 
   useEffect(() => {
 
     setSeed(Math.random() * 123);
     // could use this to also genereta an ID?
   }, []);
+
+  const sendMessage = (event) => {
+    event.preventDefault();
+    console.log('You typed:', input);
+  };
+
   return (
     <Container>
       <ChatHeader>
@@ -50,7 +60,12 @@ function Chat() {
         </div >
       </ChatBody>
       <ChatFooter>
-
+        <InsertEmoticonIcon />
+        <form>
+          <input value={input} onChange={(event) => setInput(event.target.value)} type="text" placeholder="Type a message..."/>
+          <button onClick={sendMessage} type='submit' >Send Message</button>
+        </form>
+        <MicIcon />
       </ChatFooter>
     </Container>
   );
@@ -108,7 +123,30 @@ const ChatBody = styled.div`
   `;
 
 const ChatFooter = styled.div`
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 62px;
+  border-top: 1px solid lightgray;
 
+  .MuiSvgIcon-root {
+      padding: 10px;
+      color: gray;
+    }
+
+  form {
+    display: flex;
+    flex: 1;
+    input {
+      flex: 1;
+      border-radius: 30px;
+      padding: 10px;
+      border: none;
+    }
+    button {
+      display: none;
+    }
+  }
   `;
 
 const ChatTimeStamp = styled.span`
