@@ -4,6 +4,7 @@ import styled from 'styled-components';
 import SearchOutlinedIcon from '@material-ui/icons/SearchOutlined';
 import MoreVertIcon from '@material-ui/icons/MoreVert';
 import AttachFileIcon from '@material-ui/icons/AttachFile';
+import background from "../images/whats-app-background.jpeg";
 
 function Chat() {
 
@@ -35,7 +36,7 @@ function Chat() {
         </ChatHeaderRight>
       </ChatHeader>
       <ChatBody>
-
+        <h1>Hello</h1>
       </ChatBody>
       <ChatFooter>
 
@@ -84,8 +85,14 @@ const ChatHeaderRight = styled.div`
 
 const ChatBody = styled.div`
   flex: 1;
-  /* background-image: url('../images/whats-app-background.jpeg'); */
-  /* background-image: url('https://'); */
+  background-image: url(${background});
+  background-repeat: repeat;
+  background-position: center;
+  padding: 30px;
+  overflow: scroll;
+  /* background-color: yellow; */
+
+  /* background-image: url('https://user-images.githubusercontent.com/15075759/287119144-86dc0f70-73b1-11e7-911d-60d70fcded21.png'); */
   `;
 
 const ChatFooter = styled.div`
