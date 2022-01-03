@@ -19,7 +19,7 @@ function SidebarChat({ addNewChat, id, name }) {
 
     if (roomName) {
       //database firebase stuff
-      db.colletion("rooms").add({
+      db.colletion("Rooms").add({
         name: roomName,
       });
     }
