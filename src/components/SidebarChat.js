@@ -11,7 +11,7 @@ function SidebarChat({ addNewChat, id, name }) {
   useEffect(() => {
 
     setSeed(Math.random() * 123);
-    // could use this to also genereta an ID?
+    // could use this to also generate an ID?
   }, []);
 
   const createChat = () => {
