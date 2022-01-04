@@ -4,6 +4,7 @@ import Sidebar from './Sidebar';
 import styled from 'styled-components';
 import './App.css';
 import Chat from './components/Chat';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 
 
 function App() {
@@ -12,8 +13,12 @@ function App() {
       <h1>Renato's WhatsApp Chat</h1>
       <AppBody>
         <Sidebar />
-        <Chat />
-        {/* chat area */}
+        <Router>
+          <Routes>
+            <Route path='/rooms/:roomId' element={<Chat />} />
+            <Route path='/' element={<Chat />} />
+          </Routes>
+        </Router>
       </AppBody>
     </div>
   );
