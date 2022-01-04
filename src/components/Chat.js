@@ -9,12 +9,25 @@ import InsertEmoticonIcon from '@material-ui/icons/InsertEmoticon';
 import MicIcon from '@material-ui/icons/Mic';
 import background from "../images/whats-app-background.jpeg";
 import { useParams } from 'react-router-dom';
+import db from '../firebase';
+
 
 function Chat() {
 
   const [input, setInput] = useState("");
   const [seed, setSeed] = useState("");
   const { roomId } = useParams();
+  const [roomName, setRoomName] = useState('');
+
+  useEffect(() => {
+    if (roomId) {
+      db.collection('rooms')
+      .doc(roomId)
+      .onSnapshot(snapshot => (
+        setRoomName(snapshot.data().name)
+      ));
+    }
+  }, [roomId]);
 
 
 
@@ -22,7 +35,7 @@ function Chat() {
 
     setSeed(Math.random() * 123);
     // could use this to also genereta an ID?
-  }, []);
+  }, [roomId]);
 
   const sendMessage = (event) => {
     event.preventDefault();
@@ -35,7 +48,7 @@ function Chat() {
       <ChatHeader>
         <Avatar src={`https://avatars.dicebear.com/api/human/${seed}.svg`} />
         <ChatHeaderInfo>
-          <h3>Room Name</h3>
+          <h3>{roomName}</h3>
           <p>Last seen at .....</p>
         </ChatHeaderInfo>
         <ChatHeaderRight>

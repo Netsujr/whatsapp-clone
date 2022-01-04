@@ -32,7 +32,7 @@ function SidebarChat({ addNewChat, id, name }) {
       <Avatar src={`https://avatars.dicebear.com/api/human/${seed}.svg`} />
       <SidebarChatInfo>
         <h2>{name}</h2>
-        <p>Last Mesasage ...</p>
+        <p>Last Message ...</p>
       </SidebarChatInfo>
     </ChatContainer>
     </Link>
