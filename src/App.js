@@ -12,11 +12,11 @@ function App() {
     <div className="app">
       <h1>Renato's WhatsApp Chat</h1>
       <AppBody>
-        <Sidebar />
         <Router>
+          <Sidebar />
           <Routes>
-            <Route path='/rooms/:roomId' element={<Chat />} />
-            <Route path='/' element={<Chat />} />
+            <Route exact path='/rooms/:roomId' element={<Chat />} />
+            <Route exact path='/' element={<Chat />} />
           </Routes>
         </Router>
       </AppBody>
