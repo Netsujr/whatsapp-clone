@@ -1,9 +1,9 @@
 // import logo from './logo.svg';
 import React from 'react';
-import Sidebar from './Sidebar';
 import styled from 'styled-components';
 import './App.css';
-import Chat from './components/Chat';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import Home from './Home';
 
 
 function App() {
@@ -11,9 +11,11 @@ function App() {
     <div className="app">
       <h1>Renato's WhatsApp Chat</h1>
       <AppBody>
-        <Sidebar />
-        <Chat />
-        {/* chat area */}
+        <Router>
+          <Routes>
+            <Route exact path='/chat' element={<Home/>}/>
+          </Routes>
+        </Router>
       </AppBody>
     </div>
   );
