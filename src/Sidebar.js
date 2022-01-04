@@ -11,7 +11,7 @@ function Sidebar(props) {
 
   const [rooms, setRooms] = useState([]);
   useEffect(() => {
-    const unsubscribe = db.collection("Rooms").onSnapshot(snapshot => (
+    const unsubscribe = db.collection("rooms").onSnapshot(snapshot => (
       setRooms(snapshot.docs.map(doc => (
         {
           id: doc.id,
