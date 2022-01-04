@@ -1,10 +1,11 @@
 // import logo from './logo.svg';
 import React from 'react';
-import Sidebar from './Sidebar';
 import styled from 'styled-components';
 import './App.css';
-import Chat from './components/Chat';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import Chat from './components/Chat';
+import Sidebar from './components/Sidebar';
+
 
 
 function App() {
