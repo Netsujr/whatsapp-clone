@@ -8,11 +8,13 @@ import AttachFileIcon from '@material-ui/icons/AttachFile';
 import InsertEmoticonIcon from '@material-ui/icons/InsertEmoticon';
 import MicIcon from '@material-ui/icons/Mic';
 import background from "../images/whats-app-background.jpeg";
+import { useParams } from 'react-router';
 
 function Chat() {
 
   const [input, setInput] = useState("");
   const [seed, setSeed] = useState("");
+  const { roomId } = useParams();
 
 
   useEffect(() => {
