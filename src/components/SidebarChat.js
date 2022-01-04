@@ -12,7 +12,7 @@ function SidebarChat({ addNewChat, id, name }) {
   useEffect(() => {
 
     setSeed(Math.random() * 123);
-    // could use this to also genereta an ID?
+    // could use this to also generate an ID?
   }, []);
 
   const createChat = () => {
@@ -20,7 +20,7 @@ function SidebarChat({ addNewChat, id, name }) {
 
     if (roomName) {
       //database firebase stuff
-      db.collection("rooms").add({
+      db.colletion("rooms").add({
         name: roomName
       });
     }
@@ -28,18 +28,20 @@ function SidebarChat({ addNewChat, id, name }) {
 
   return !addNewChat ? (
     <Link to={`/rooms/${id}`}>
-      <ChatContainer>
-        <Avatar src={`https://avatars.dicebear.com/api/human/${seed}.svg`} />
-        <SidebarChatInfo>
-          <h2>{name}</h2>
-          <p>Last Mesasage ...</p>
-        </SidebarChatInfo>
-      </ChatContainer>
+    <ChatContainer>
+      <Avatar src={`https://avatars.dicebear.com/api/human/${seed}.svg`} />
+      <SidebarChatInfo>
+        <h2>{name}</h2>
+        <p>Last Message ...</p>
+      </SidebarChatInfo>
+    </ChatContainer>
     </Link>
   ) : (
+
     <ChatContainer onClick={createChat}>
       <h2>Add new Chat</h2>
     </ChatContainer>
+
   );
 }
 
