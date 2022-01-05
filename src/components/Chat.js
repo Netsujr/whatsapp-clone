@@ -87,7 +87,7 @@ function Chat() {
       <ChatBody>
         {messages.map(message => (
 
-          <div className={`chat_message ${true && 'chat_receiver'}`}>
+          <div className={`chat_message ${message.name === user.displayName && 'chat_receiver'}`}>
 
             <ChatName>
               {message.name}
