@@ -100,7 +100,7 @@ function Chat() {
             </ChatName>
             {message.message}
             <ChatTimeStamp>
-              {new Date(message.timestamp?.toDate()).toUTCString()}
+              <br />{new Date(message.timestamp?.toDate()).toUTCString()}
             </ChatTimeStamp>
 
           </div >
