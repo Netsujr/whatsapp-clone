@@ -3,10 +3,11 @@ import { Avatar } from '@material-ui/core';
 import styled from 'styled-components';
 import db from '../firebase';
 import { Link } from 'react-router-dom';
+import { useStateValue } from '../StateProvider';
 
 
 function SidebarChat({ addNewChat, id, name }) {
-
+  // const [{ user }, dispatch] = useStateValue();
   const [seed, setSeed] = useState("");
 
   useEffect(() => {

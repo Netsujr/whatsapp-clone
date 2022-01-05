@@ -6,11 +6,12 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Chat from './components/Chat';
 import Sidebar from './Sidebar';
 import Login from './components/Login';
+import { useStateValue } from './StateProvider';
 
 
 
 function App() {
-  const [user, setUser] = useState(null);
+  const [{ user }, dispatch] = useStateValue();
 
   return (
     <div className="app">

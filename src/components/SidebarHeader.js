@@ -2,11 +2,14 @@ import React from 'react';
 import styled from 'styled-components';
 import { Avatar } from '@material-ui/core';
 import SidebarHeaderRight from './SidebarHeaderRight';
+import { useStateValue } from '../StateProvider';
+
 
 function SidebarHeader() {
+  const [{ user }, dispatch] = useStateValue();
   return (
     <SidebarHeaderContainer>
-      <Avatar />
+      <Avatar src={user?.photoURL}/>
       <SidebarHeaderRight />
     </SidebarHeaderContainer>
   );
