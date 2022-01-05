@@ -30,14 +30,14 @@ function Sidebar(props) {
     <SidebarContainer>
       <SidebarHeader />
       <SidebarSearch />
-        <SidebarChats>
-          <SidebarChat addNewChat />
-          {rooms.map(room => {
-            return (
-              <SidebarChat key={room.id} id={room.id} name={room.data.name} />
-            );
-          })}
-        </SidebarChats>
+      <SidebarChats>
+        <SidebarChat addNewChat />
+        {rooms.map(room => {
+          return (
+            <SidebarChat key={room.id} id={room.id} name={room.data.name} />
+          );
+        })}
+      </SidebarChats>
     </SidebarContainer>
   );
 };
@@ -46,14 +46,18 @@ export default Sidebar;
 
 
 const SidebarContainer = styled.div`
-  display: flex;
-  flex-direction: column;
-  flex: 0.35;
-  `;
+        display: flex;
+        flex-direction: column;
+        flex: 0.35;
+        `;
 
 const SidebarChats = styled.div`
         flex: 1;
         background-color: white;
         overflow: scroll;
 
+        a {
+          text-decoration: none;
+          color: black;
+        }
         `;

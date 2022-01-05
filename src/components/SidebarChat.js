@@ -68,6 +68,8 @@ const ChatContainer = styled.div`
       cursor: pointer;
       border-bottom: 1px solid #f6f6f6;
 
+
+
       &:hover {
         background-color: #ebebeb;
       }
@@ -81,10 +83,5 @@ const ChatContainer = styled.div`
 
 const SidebarChatInfo = styled.div`
       margin-left: 15px;
-
-      a {
-        text-decoration: none;
-        color: black;
-      }
 
       `;
