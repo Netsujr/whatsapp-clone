@@ -53,13 +53,13 @@ function Chat() {
     event.preventDefault();
     console.log('You typed:', input);
     db.collection('rooms').
-    doc(roomId).
-    collection('messages')
-    .add({
-      message: input,
-      name: user.displayName,
-      timestamp: firebase.firestore.FieldValue.serverTimestamp(),
-    });
+      doc(roomId).
+      collection('messages')
+      .add({
+        message: input,
+        name: user.displayName,
+        timestamp: firebase.firestore.FieldValue.serverTimestamp(),
+      });
 
     setInput("");
   };
@@ -70,7 +70,12 @@ function Chat() {
         <Avatar src={`https://avatars.dicebear.com/api/human/${seed}.svg`} />
         <ChatHeaderInfo>
           <h3>{roomName}</h3>
-          <p>Last seen at .....</p>
+          <p>Last seen at {" "}
+            {new Date(
+              messages[messages.length - 1] ?.timestamp?.toDate())
+              .toUTCString()
+            }
+          </p>
         </ChatHeaderInfo>
         <ChatHeaderRight>
           <IconButton>
@@ -88,7 +93,7 @@ function Chat() {
         {messages.map(message => (
 
           <div className={`chat_message ${message.name === user.displayName && 'chat_receiver'}`}>
-
+            {/* in production, cannot use message.name as 2 ppl may have the same name, maybe pull user id from google and use that  */}
             <ChatName>
               {message.name}
             </ChatName>
