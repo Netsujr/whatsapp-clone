@@ -59,5 +59,8 @@ const SidebarChats = styled.div`
         a {
           text-decoration: none;
           color: black;
+          p {
+            color: gray;
+          }
         }
         `;
