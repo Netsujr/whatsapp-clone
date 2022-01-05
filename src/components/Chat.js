@@ -31,6 +31,7 @@ function Chat() {
         .onSnapshot(snapshot => (
           setRoomName(snapshot.data().name)
         ));
+
       db.collection('rooms')
         .doc(roomId)
         .collection('messages')
@@ -72,7 +73,7 @@ function Chat() {
           <h3>{roomName}</h3>
           <p>Last seen at {" "}
             {new Date(
-              messages[messages.length - 1] ?.timestamp?.toDate())
+              messages[messages.length - 1]?.timestamp?.toDate())
               .toUTCString()
             }
           </p>
