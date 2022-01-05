@@ -7,6 +7,7 @@ import { useStateValue } from '../StateProvider';
 
 
 const Login = () => {
+  // eslint-disable-next-line no-empty-pattern
   const[{}, dispatch] = useStateValue();
 
   const signIn = () => {

@@ -6,7 +6,7 @@ import { useStateValue } from '../StateProvider';
 
 
 function SidebarHeader() {
-  const [{ user }, dispatch] = useStateValue();
+  const [{ user }] = useStateValue();
   return (
     <SidebarHeaderContainer>
       <Avatar src={user?.photoURL}/>
