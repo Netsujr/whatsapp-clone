@@ -11,6 +11,7 @@ import background from "../images/whats-app-background.jpeg";
 import { useParams } from 'react-router-dom';
 import db from '../firebase';
 import { useStateValue } from '../StateProvider';
+import firebase from 'firebase/compat/app';
 
 
 function Chat() {
@@ -20,7 +21,7 @@ function Chat() {
   const { roomId } = useParams();
   const [roomName, setRoomName] = useState('');
   const [messages, setMessages] = useState([]);
-  const [{user}] = useStateValue();
+  const [{ user }] = useStateValue();
 
 
   useEffect(() => {
@@ -51,6 +52,15 @@ function Chat() {
   const sendMessage = (event) => {
     event.preventDefault();
     console.log('You typed:', input);
+    db.collection('rooms').
+    doc(roomId).
+    collection('messages')
+    .add({
+      message: input,
+      name: user.displayName,
+      timestamp: firebase.firestore.FieldValue.serverTimestamp(),
+    });
+
     setInput("");
   };
 
