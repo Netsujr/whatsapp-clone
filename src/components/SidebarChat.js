@@ -20,7 +20,7 @@ function SidebarChat({ addNewChat, id, name }) {
         .orderBy('timestamp', "desc")
         .onSnapshot(snapshot =>
           setMessages(snapshot.docs.map((doc) => doc.data()))
-      )
+        )
     }
   }, []);
 
@@ -43,13 +43,13 @@ function SidebarChat({ addNewChat, id, name }) {
 
   return !addNewChat ? (
     <Link to={`/rooms/${id}`}>
-    <ChatContainer>
-      <Avatar src={`https://avatars.dicebear.com/api/human/${seed}.svg`} />
-      <SidebarChatInfo>
-        <h2>{name}</h2>
-        <p>{messages[0]?.message }</p>
-      </SidebarChatInfo>
-    </ChatContainer>
+      <ChatContainer>
+        <Avatar src={`https://avatars.dicebear.com/api/human/${seed}.svg`} />
+        <SidebarChatInfo>
+          <h2>{name}</h2>
+          <p>{messages[0]?.message}</p>
+        </SidebarChatInfo>
+      </ChatContainer>
     </Link>
   ) : (
 
@@ -63,22 +63,28 @@ function SidebarChat({ addNewChat, id, name }) {
 export default SidebarChat;
 
 const ChatContainer = styled.div`
-    display: flex;
-    padding: 20px;
-    cursor: pointer;
-    border-bottom: 1px solid #f6f6f6;
+      display: flex;
+      padding: 20px;
+      cursor: pointer;
+      border-bottom: 1px solid #f6f6f6;
 
-    &:hover {
-      background-color: #ebebeb;
-    }
+      &:hover {
+        background-color: #ebebeb;
+      }
 
-    h2 {
-      font-size: 16px;
-      margin-bottom: 8px;
-    }
-    `;
+      h2 {
+        font-size: 16px;
+        margin-bottom: 8px;
+      }
+
+      `;
 
 const SidebarChatInfo = styled.div`
-    margin-left: 15px;
+      margin-left: 15px;
 
-    `;
+      a {
+        text-decoration: none;
+        color: black;
+      }
+
+      `;

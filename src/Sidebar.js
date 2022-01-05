@@ -32,7 +32,6 @@ function Sidebar(props) {
       <SidebarSearch />
         <SidebarChats>
           <SidebarChat addNewChat />
-
           {rooms.map(room => {
             return (
               <SidebarChat key={room.id} id={room.id} name={room.data.name} />
